@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Direct search engines to your sitemap
+Sitemap: https://HelixOriginator.github.io/National-IP-Verified-Policy-Registry/sitemap.xml
