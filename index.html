@@ -3,89 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="6qcwYwzA6RaAwLVA6G3HBTprB8Bdw4A16uZCF5e9Ar8" />
     <title>National IP-Verified Policy Registry | Kallol Chakrabarti</title>
     <style>
         :root {
             --bg-color: #0d1117;
             --card-bg: #161b22;
-            --text-primary: #c9d1d9;
+            --text-primary: #f0f6fc;
             --text-secondary: #8b949e;
-            --accent-color: #58a6ff;
-            --success-color: #238636;
+            --accent-blue: #58a6ff;
+            --success-green: #238636;
             --gold: #d29922;
+            --border: #30363d;
         }
         body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
             line-height: 1.6; 
             color: var(--text-primary); 
             background-color: var(--bg-color);
-            max-width: 1000px; 
-            margin: 0 auto; 
-            padding: 20px; 
+            max-width: 1100px; margin: 0 auto; padding: 20px; 
         }
-        header { 
-            text-align: center; 
-            padding: 60px 20px; 
-            border-bottom: 1px solid #30363d;
-        }
-        h1 { color: white; font-size: 2.5em; margin-bottom: 10px; }
+        header { text-align: center; padding: 60px 20px; border-bottom: 1px solid var(--border); }
         .badge {
-            background-color: rgba(210, 153, 34, 0.1);
-            color: var(--gold);
-            border: 1px solid var(--gold);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            background: rgba(210, 153, 34, 0.1); color: var(--gold); border: 1px solid var(--gold);
+            padding: 5px 15px; border-radius: 20px; font-size: 0.8em; text-transform: uppercase;
         }
         .stats-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-            gap: 20px; 
-            margin: 40px 0; 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 20px; margin: 40px 0; 
         }
         .stat-card { 
-            background: var(--card-bg); 
-            padding: 25px; 
-            border-radius: 12px; 
-            border: 1px solid #30363d;
-            text-align: center; 
+            background: var(--card-bg); padding: 20px; border-radius: 12px; 
+            border: 1px solid var(--border); text-align: center; 
         }
-        .stat-number { display: block; font-size: 2.2em; font-weight: 800; color: var(--accent-color); }
-        .section-title { color: white; border-left: 4px solid var(--accent-color); padding-left: 15px; margin: 40px 0 20px 0; }
+        .stat-number { display: block; font-size: 2.2em; font-weight: 800; color: var(--accent-blue); }
         
-        .world-first-grid {
+        /* THE 4 BEAUTIFUL BUTTONS STYLING */
+        .button-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
+            margin: 40px 0;
         }
-        .article-card {
-            background: var(--card-bg);
+        .action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid var(--gold);
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
         }
-        .article-card h4 { margin: 0 0 10px 0; color: white; }
-        .article-card p { font-size: 0.9em; color: var(--text-secondary); }
-
-        .btn-container { text-align: center; margin: 60px 0; }
-        .download-btn { 
-            background-color: var(--success-color); 
-            color: white; 
-            padding: 18px 40px; 
-            text-decoration: none; 
-            font-size: 1.1em; 
-            border-radius: 6px; 
-            font-weight: bold; 
-            transition: 0.2s;
-            display: inline-block;
+        /* Blue Buttons for Policies */
+        .btn-blue {
+            background: linear-gradient(135deg, #1f6feb 0%, #58a6ff 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(31, 111, 235, 0.3);
         }
-        .download-btn:hover { background-color: #2ea043; transform: translateY(-2px); }
+        /* Green Buttons for Verification */
+        .btn-green {
+            background: linear-gradient(135deg, #238636 0%, #2ea043 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(35, 134, 54, 0.3);
+        }
+        .action-btn:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
         
-        footer { text-align: center; padding: 40px; border-top: 1px solid #30363d; color: var(--text-secondary); }
-        @media (max-width: 768px) { .world-first-grid { grid-template-columns: 1fr; } }
+        .section-title { color: white; border-left: 5px solid var(--accent-blue); padding-left: 15px; margin: 40px 0 20px; }
+        footer { text-align: center; padding: 40px; color: var(--text-secondary); border-top: 1px solid var(--border); }
+
+        @media (max-width: 768px) { .button-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -93,50 +86,45 @@
 <header>
     <span class="badge">National IP Award Invitee 2026</span>
     <h1>National IP-Verified Policy Registry</h1>
-    <p style="font-size: 1.2em; color: var(--text-secondary);">Official Archive of <strong>Kallol Chakrabarti</strong> | Helix Originator</p>
-    <code style="background: #161b22; padding: 5px 10px; border-radius: 4px;">ORCID: 0009-0007-4971-8936</code>
+    <p>Created by <strong>Kallol Chakrabarti</strong> | Global Independent Researcher</p>
+    <p style="color: var(--text-secondary);">ORCID: 0009-0007-4971-8936</p>
 </header>
 
 <div class="stats-grid">
-    <div class="stat-card"><span class="stat-number">260</span> DOI Works</div>
+    <div class="stat-card"><span class="stat-number">260+</span> DOI Works</div>
     <div class="stat-card"><span class="stat-number">219+</span> Original Concepts</div>
     <div class="stat-card"><span class="stat-number">25</span> Copyrights</div>
     <div class="stat-card"><span class="stat-number">1</span> Patent Filed</div>
 </div>
 
-<h2 class="section-title">World-First Innovation Highlights</h2>
-<div class="world-first-grid">
-    <div class="article-card">
-        <h4>The Karma Index (KI)</h4>
-        <p>A global-first model integrating Vedic ethical causality into modern algorithmic governance. (DOI: 10.5281/ZENODO.17374186)</p>
-    </div>
-    <div class="article-card">
-        <h4>Blind Justice Architecture (BJA)</h4>
-        <p>A groundbreaking caste-neutral, evidence-first framework for equity governance in higher education.</p>
-    </div>
-    <div class="article-card" style="border-left-color: var(--accent-color);">
-        <h4>Helix Kallol Protocol (HKP)</h4>
-        <p>A world-first legally enforceable system for ethical employment using Proof-of-Ethics (PoE) and AI risk prediction.</p>
-    </div>
-    <div class="article-card" style="border-left-color: var(--accent-color);">
-        <h4>Employment Shopping</h4>
-        <p>A revolutionary AI-driven universal job allocation model for inclusive workforce integration.</p>
-    </div>
-</div>
-
-<h2 class="section-title">Verified Methodology</h2>
-<p style="color: var(--text-secondary);">All works archived here have been verified through Persistent Digital Identifiers (DOIs) and submitted to the Prime Minister’s Office (PMO) of India on March 5th, 2026. This registry serves as primary evidence for the Limca Book of World Records claim regarding the highest number of original policy frameworks by an independent researcher.</p>
-
-<div class="btn-container">
-    <a href="Kallol_Research_Bibliography_260_DOIs.docx" class="download-btn">
-        📥 DOWNLOAD COMPLETE MASTER BIBLIOGRAPHY (260 DOIs)
+<h2 class="section-title">2026 Active Policy Submissions</h2>
+<div class="button-grid">
+    <a href="SPARC_Energy_Policy_Brief_Kallol_Chakrabarti.pdf" class="action-btn btn-blue">
+        📄 View SPARC Energy Policy
     </a>
-    <p style="margin-top: 15px; color: var(--text-secondary); font-size: 0.85em;">Verification Document | Kallol_Research_Bibliography_260_DOIs.docx</p>
+    <a href="NREPA_Policy_Proposal_India_Kallol_Chakrabarti.pdf" class="action-btn btn-blue">
+        ⚖️ View NREPA Governance Proposal
+    </a>
 </div>
+
+<h2 class="section-title">Registry Verification & Evidence</h2>
+<div class="button-grid">
+    <a href="Kallol_Research_Bibliography_260_DOIs.docx" class="action-btn btn-green">
+        📚 Download Master Bibliography (260+ DOIs)
+    </a>
+    <a href="CPGRAMS_Submission_Receipt_DOSEL_E_2026_0003345 NRPEA.pdf" class="action-btn btn-green">
+        ✅ View CPGRAMS Submission Receipt
+    </a>
+</div>
+
+<h2 class="section-title">Policy Framework Summaries</h2>
+<p style="color: var(--text-secondary);">
+    The <strong>SPARC</strong> framework addresses fuel affordability via Smart Fuel Support, while <strong>NREPA</strong> focuses on institutional parity. Both works are verified through persistent identifiers and were submitted for the March 2026 <em>Mann Ki Baat</em> and CPGRAMS respectively.
+</p>
 
 <footer>
-    <p>Established for National Policy Innovation & Open Science Transparency</p>
     <p>&copy; 2026 Kallol Chakrabarti | Lucknow, India</p>
+    <p style="font-size: 0.8em;">Digital Registry of Independent Research Excellence</p>
 </footer>
 
 </body>
